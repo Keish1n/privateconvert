@@ -1,0 +1,99 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Converter from '../components/Converter.astro';
+
+const title = "Convert HEIC to JPG Offline - PrivateConvert";
+const description = "Free offline HEIC to JPG converter. Convert HEIC photos to JPG format directly in your browser without uploading files. Secure, fast, and private.";
+const url = "/heic-to-jpg-offline/";
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Does this convert HEIC to JPG offline?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Yes. PrivateConvert runs entirely in your browser. Your photos are never uploaded to any server." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you upload my photos to a server?",
+      "acceptedAnswer": { "@type": "Answer", "text": "No. All processing happens locally on your device using JavaScript technology." }
+    },
+    {
+        "@type": "Question",
+        "name": "Does it work without internet after the page loads?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Once the page is loaded, you can disconnect from the internet and the tool will still work." }
+    },
+    {
+        "@type": "Question",
+        "name": "Can I convert multiple HEIC files at once?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes, you can select or drag and drop multiple HEIC files for batch conversion." }
+    },
+    {
+        "@type": "Question",
+        "name": "Can I download all converted images as a ZIP?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. After converting multiple files, a 'Download All (ZIP)' button will appear." }
+    }
+  ]
+};
+---
+
+<Layout title={title} description={description} url={url}>
+  <section style="text-align: center; margin-bottom: 2rem;">
+    <h1 style="font-size: 2.5rem; margin-bottom: 0.5rem; letter-spacing: -0.025em; color: var(--text);">Convert HEIC to JPG <span style="color: var(--primary);">Offline</span></h1>
+    <p style="font-size: 1.125rem; color: var(--muted); max-width: 600px; margin: 0 auto;">
+      Secure client-side conversion. No file uploads limits. 100% Free.
+    </p>
+  </section>
+
+  <Converter />
+
+  <section id="faq" class="container" style="margin-top: 4rem;">
+    <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem;">Frequently Asked Questions</h2>
+    <div style="display: grid; gap: 1.5rem;">
+      <details class="card">
+        <summary style="cursor: pointer; font-weight: 600;">Does this convert HEIC to JPG offline?</summary>
+        <p style="margin-top: 0.5rem; color: var(--muted);">Yes. PrivateConvert runs entirely in your browser using WebAssembly technology. Your photos effectively stay on your computer; they are never sent to a cloud server.</p>
+      </details>
+      <details class="card">
+        <summary style="cursor: pointer; font-weight: 600;">Do you upload my photos to a server?</summary>
+        <p style="margin-top: 0.5rem; color: var(--muted);">No. We have no backend server for image processing. Everything happens client-side.</p>
+      </details>
+      <details class="card">
+        <summary style="cursor: pointer; font-weight: 600;">Does it work without internet after the page loads?</summary>
+        <p style="margin-top: 0.5rem; color: var(--muted);">Yes! Once the scripts are loaded, you can go offline and continue converting images.</p>
+      </details>
+      <details class="card">
+        <summary style="cursor: pointer; font-weight: 600;">Can I convert multiple HEIC files at once?</summary>
+        <p style="margin-top: 0.5rem; color: var(--muted);">Absolutely. Provide as many files as you like. We process them in small batches to keep your browser responsive.</p>
+      </details>
+      <details class="card">
+        <summary style="cursor: pointer; font-weight: 600;">Can I download all converted images as a ZIP?</summary>
+        <p style="margin-top: 0.5rem; color: var(--muted);">Yes. Use the "Download All (ZIP)" button that appears after conversion.</p>
+      </details>
+      <details class="card">
+        <summary style="cursor: pointer; font-weight: 600;">Will converting HEIC to JPG reduce quality?</summary>
+        <p style="margin-top: 0.5rem; color: var(--muted);">JPG is a lossy format, so there is technically some data difference, but we use high-quality settings (0.8) to ensure your photos look great.</p>
+      </details>
+      <details class="card">
+        <summary style="cursor: pointer; font-weight: 600;">Can I convert HEIC to PNG instead?</summary>
+        <p style="margin-top: 0.5rem; color: var(--muted);">Currently we specialize in JPG for maximum compatibility, but a PNG toggle may be added in the future.</p>
+      </details>
+      <details class="card">
+        <summary style="cursor: pointer; font-weight: 600;">Why can’t Windows open HEIC files?</summary>
+        <p style="margin-top: 0.5rem; color: var(--muted);">Windows lacks native HEIC support by default. You often need to install the paid "HEIF Image Extensions" from the Microsoft Store.</p>
+      </details>
+      <details class="card">
+        <summary style="cursor: pointer; font-weight: 600;">Does conversion keep Date Taken / EXIF metadata?</summary>
+        <p style="margin-top: 0.5rem; color: var(--muted);">It depends. While we try to preserve metadata, client-side conversion varies by browser and EXIF/GPS data may not always be preserved perfectly. Always check your important files.</p>
+      </details>
+      <details class="card">
+        <summary style="cursor: pointer; font-weight: 600;">My HEIC won’t convert — what should I try?</summary>
+        <p style="margin-top: 0.5rem; color: var(--muted);">Some "Live Photos" or highly specific HEIC variants might fail. Try re-exporting them or converting them one by one.</p>
+      </details>
+    </div>
+  </section>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</Layout>

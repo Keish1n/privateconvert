@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Privacy Policy - PrivateConvert";
+const description = "Privacy Policy for PrivateConvert. We do not collect or upload your photos.";
+const url = "/privacy/";
+---
+
+<Layout title={title} description={description} url={url}>
+  <div class="container card">
+    <h1>Privacy Policy</h1>
+    <p>Last updated: {new Date().toLocaleDateString()}</p>
+    <p>At PrivateConvert, we prioritize your privacy above all else.</p>
+    <h2>Data Collection</h2>
+    <p>We do not collect, store, or transmit your images. All image processing is performed locally on your device using client-side technologies (WebAssembly and JavaScript).</p>
+    <h2>Cookies</h2>
+    <p>We use local storage only to save your theme preference (Dark/Light mode). We do not use tracking cookies.</p>
+    <h2>External Links</h2>
+    <p>We may link to external partners (like pCloud). We are not responsible for the privacy practices of other sites.</p>
+  </div>
+</Layout>

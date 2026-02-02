@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const title = "Page Not Found - PrivateConvert";
+const description = "404 - Page not found.";
+const url = "/404/";
+---
+
+<Layout title={title} description={description} url={url}>
+  <div class="container" style="text-align: center; padding: 4rem 1rem;">
+    <h1 style="font-size: 3rem; margin-bottom: 1rem;">404</h1>
+    <p style="font-size: 1.25rem; color: var(--muted); margin-bottom: 2rem;">Page not found.</p>
+    <a href="/" class="btn">Go Home</a>
+  </div>
+</Layout>
